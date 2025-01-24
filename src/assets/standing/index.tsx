@@ -19,5 +19,4 @@ export { default as standing_18 } from "./standing_18.svg";
 export { default as standing_19 } from "./standing_19.svg";
 export { default as standing_20 } from "./standing_20.svg";
 export { default as standing_21 } from "./standing_21.svg";
-export { default as standing_22 } from "./standing_21.svg";
-export { default as standing_23 } from "./standing_22.svg";
+export { default as standing_22 } from "./standing_22.svg";

@@ -1,0 +1,10 @@
+export { default as sitting_1 } from "./sitting_1.svg";
+export { default as sitting_2 } from "./sitting_2.svg";
+export { default as sitting_3 } from "./sitting_3.svg";
+export { default as sitting_4 } from "./sitting_4.svg";
+export { default as sitting_5 } from "./sitting_5.svg";
+export { default as sitting_6 } from "./sitting_6.svg";
+export { default as sitting_7 } from "./sitting_7.svg";
+export { default as sitting_8 } from "./sitting_8.svg";
+export { default as sitting_9 } from "./sitting_9.svg";
+export { default as sitting_10 } from "./sitting_10.svg";

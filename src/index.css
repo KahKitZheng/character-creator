@@ -1,4 +1,10 @@
 :root {
+  --bg-color: #242424;
+  --option-border-color: hsl(0, 0%, 18%);
+  --primary-hue: 211;
+  --option-bg-color: hsl(var(--primary-hue), 100%, 91%);
+  --primary-color: hsl(var(--primary-hue), 100%, 50%);
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;

@@ -10,12 +10,12 @@ import "./App.scss";
 
 function App() {
   const [character, setCharacter] = useState<Character>({
-    head: 24,
-    face: 14,
-    "facial hair": 7,
+    head: 43,
+    face: 24,
+    "facial hair": -1,
     body: -1,
-    standing: 5,
-    sitting: -1,
+    standing: -1,
+    sitting: 9,
     accessory: 1,
   });
   const [locked, setLocked] = useState<string[]>([]);

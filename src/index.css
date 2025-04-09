@@ -2,7 +2,7 @@
   --bg-color: #242424;
   --option-border-color: hsl(0, 0%, 18%);
   --primary-hue: 211;
-  --option-bg-color: hsl(var(--primary-hue), 100%, 91%);
+  --option-bg-color: hsl(var(--primary-hue), 100%, 90%);
   --primary-color: hsl(var(--primary-hue), 100%, 50%);
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

@@ -6,6 +6,19 @@
   text-align: center;
 }
 
+button {
+  background-color: rgb(93, 93, 93);
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #333;
+  }
+}
+
 .header {
   display: flex;
   align-items: baseline;
@@ -38,7 +51,7 @@
   grid-template-columns: 400px 1fr;
   position: relative;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 }
@@ -49,60 +62,44 @@
   left: 0;
   height: 100px;
   width: 100px;
-  scale: 2.5;
+  scale: 3;
+  margin-top: 4rem;
   transform-origin: top left;
-
-  @media (max-width: 1024px) {
-    position: static;
-    scale: 1.5;
-    margin: 0 auto;
-    height: 400px;
-  }
 
   .head {
     position: absolute;
     top: 2%;
     left: 36%;
     z-index: 1;
-
-    // svg {
-    //   fill: red;
-    // }
   }
-
   .face {
     position: absolute;
     top: 1rem;
     left: 45.25%;
     z-index: 2;
   }
-
   .facial-hair {
     position: absolute;
     top: 27%;
     left: 43%;
     z-index: 3;
   }
-
   .accessory {
     position: absolute;
     top: 11%;
     left: 43%;
     z-index: 4;
   }
-
   .body {
     position: absolute;
     top: 37%;
     left: 14%;
   }
-
   .sitting {
     position: absolute;
     top: 36%;
     left: 6%;
   }
-
   .standing {
     position: absolute;
     top: 36%;
@@ -110,7 +107,12 @@
     z-index: 0;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
+    position: static;
+    // scale: 2;
+    margin: 0 auto;
+    height: 400px;
+
     .head {
       top: 2%;
     }
@@ -157,6 +159,7 @@
     margin-bottom: 1.5rem;
     font-weight: 600;
     position: relative;
+    color: #fff;
 
     &::before {
       content: "";
@@ -196,6 +199,7 @@
   gap: 12px;
 
   .option {
+    opacity: 0;
     display: grid;
     place-items: center;
     aspect-ratio: 1;

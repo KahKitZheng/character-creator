@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Lock, Shuffle, Unlock } from "lucide-react";
 import * as Heads from "../../assets/head";
 import * as Faces from "../../assets/face";
 import * as FacialHairs from "../../assets/facial-hair";
@@ -16,7 +17,7 @@ function App() {
     "facial hair": -1,
     body: -1,
     standing: -1,
-    sitting: 9,
+    sitting: 3,
     accessory: 1,
   });
   const [locked, setLocked] = useState<string[]>([]);
@@ -198,16 +199,18 @@ function App() {
   return (
     <main>
       <header className="header">
-        <h1 className="header__title">Character creator</h1>
+        <h1 className="header__title">Character creator demo</h1>
         <div className="header__actions">
           <button
             onClick={randomize}
             disabled={locked.length === categories.length}
           >
-            randomize
+            <span>Randomize</span>
+            <Shuffle size={14} strokeWidth={"3px"} />
           </button>
           <button onClick={unlockAllOptions} disabled={locked.length === 0}>
-            unlock all
+            <span>Unlock all</span>
+            <Unlock size={14} strokeWidth={"3px"} />
           </button>
         </div>
       </header>
@@ -255,7 +258,12 @@ function App() {
           {categories.map((category) => (
             <div key={category.name}>
               <div className="category__header">
-                <h2 className="category">
+                <motion.h2
+                  className="category"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1.5 }}
+                >
                   {category.name}{" "}
                   <span className="category__count">
                     (
@@ -264,16 +272,29 @@ function App() {
                       : "-"}
                     /{Object.values(category.assets).length})
                   </span>
-                </h2>
+                </motion.h2>
                 <div className="category__actions">
                   <button
                     onClick={() => randomizeOption(category)}
                     disabled={locked.includes(category.key)}
                   >
-                    randomize
+                    <>
+                      <span>Randomize</span>
+                      <Shuffle size={14} strokeWidth={"3px"} />
+                    </>
                   </button>
                   <button onClick={() => lockOption(category)}>
-                    {locked.includes(category.key) ? "unlock" : "lock"}
+                    {locked.includes(category.key) ? (
+                      <>
+                        <span>Lock</span>
+                        <Lock size={14} strokeWidth={"3px"} />
+                      </>
+                    ) : (
+                      <>
+                        <span>Unlock</span>
+                        <Unlock size={14} strokeWidth={"3px"} />
+                      </>
+                    )}
                   </button>
                 </div>
               </div>
@@ -307,8 +328,8 @@ function App() {
                           delay: index * 0.04,
                           duration: 0.01,
                           type: "spring",
-                          bounce: 0.05,
-                          stiffness: 130,
+                          bounce: 0.03,
+                          stiffness: 110,
                         }}
                         className={`option ${
                           character[category.key] === index ? "selected" : ""

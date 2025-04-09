@@ -1,17 +1,13 @@
 :root {
-  --bg-color: #242424;
-  --option-border-color: hsl(0, 0%, 18%);
-  --primary-hue: 211;
-  --option-bg-color: hsl(var(--primary-hue), 100%, 90%);
-  --primary-color: hsl(var(--primary-hue), 100%, 50%);
+  --hue: 30deg;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: black;
+  background-color: hsl(40, 90.9%, 91.4%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,4 +21,10 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+
+  ::selection {
+    background-color: hsl(140deg 100% 70%);
+    color: black;
+    text-shadow: none;
+  }
 }

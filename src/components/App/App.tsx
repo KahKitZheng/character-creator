@@ -279,50 +279,48 @@ function App() {
               </div>
               <div className="options">
                 <AnimatePresence mode="sync">
-                  {Object.values(category.assets)
-                    .slice(0, 10)
-                    .map((Option, index) => {
-                      const originalIndex = Object.values(
-                        category.assets
-                      ).indexOf(Option);
+                  {Object.values(category.assets).map((Option, index) => {
+                    const originalIndex = Object.values(
+                      category.assets
+                    ).indexOf(Option);
 
-                      return (
-                        <motion.button
-                          key={originalIndex}
-                          initial={{
-                            position: "relative",
-                            opacity: 0,
-                            left: "-100px",
-                            top: "-200px",
-                          }}
-                          animate={{
-                            opacity: 1,
-                            left: 0,
-                            top: 0,
-                          }}
-                          exit={{
-                            opacity: 0,
-                            left: "-100px",
-                            top: "200px",
-                          }}
-                          transition={{
-                            delay: index * 0.04,
-                            duration: 0.01,
-                            type: "spring",
-                            bounce: 0.05,
-                            stiffness: 130,
-                          }}
-                          className={`option ${
-                            character[category.key] === index ? "selected" : ""
-                          }`}
-                          onClick={() => changeOption(category, index)}
-                        >
-                          <div className="option-asset">
-                            <Option key={index} />
-                          </div>
-                        </motion.button>
-                      );
-                    })}
+                    return (
+                      <motion.button
+                        key={originalIndex}
+                        initial={{
+                          position: "relative",
+                          opacity: 0,
+                          left: "-100px",
+                          top: "-200px",
+                        }}
+                        animate={{
+                          opacity: 1,
+                          left: 0,
+                          top: 0,
+                        }}
+                        exit={{
+                          opacity: 0,
+                          left: "-100px",
+                          top: "200px",
+                        }}
+                        transition={{
+                          delay: index * 0.04,
+                          duration: 0.01,
+                          type: "spring",
+                          bounce: 0.05,
+                          stiffness: 130,
+                        }}
+                        className={`option ${
+                          character[category.key] === index ? "selected" : ""
+                        }`}
+                        onClick={() => changeOption(category, index)}
+                      >
+                        <div className="option-asset">
+                          <Option key={index} />
+                        </div>
+                      </motion.button>
+                    );
+                  })}
                 </AnimatePresence>
               </div>
             </div>
